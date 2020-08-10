@@ -12,7 +12,7 @@ class Loginscreen extends Component {
     this.state = {
          loginscreen: [],
       loginmessage: '',
-      // buttonLabel: 'Register',
+       buttonLabel: 'SignUp',
     //  buttonLabel: 'Utilization',
       isLogin: true
     }
@@ -20,9 +20,9 @@ class Loginscreen extends Component {
   componentWillMount() {
     var loginscreen = [];
      loginscreen.push(<Login parentContext={this} appContext={this.props.parentContext} />);
-   // loginscreen.push(<Person parentContext={this} appContext={this.props.parentContext} />);
-    // var loginmessage = "Not registered yet, Register Now";
-    var loginmessage = "Person Utilization Details";
+  // loginscreen.push(<Person parentContext={this} appContext={this.props.parentContext} />);
+    var loginmessage = "Not a User, SignUp Now";
+  //  var loginmessage = "Person Utilization Details";
     this.setState({
       loginscreen: loginscreen,
       loginmessage: loginmessage
@@ -32,14 +32,14 @@ class Loginscreen extends Component {
     return (
       <div className="loginscreen">
         {this.state.loginscreen}
-        {/* <div>
+        <div>
           {this.state.loginmessage}
           <MuiThemeProvider>
           <div>
               <RaisedButton label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
            </div>
           </MuiThemeProvider>
-        </div> */}
+        </div>
       </div>
     );
   }
@@ -50,7 +50,7 @@ class Loginscreen extends Component {
   var loginmessage;
   if (this.state.isLogin) {
     var loginscreen = [];
-    loginscreen.push(<Utilization parentContext={this} />);
+    loginscreen.push(<Register parentContext={this} />);
     loginmessage = "Go Back to Person Details";
     this.setState({
       loginscreen: loginscreen,
@@ -67,7 +67,7 @@ class Loginscreen extends Component {
     this.setState({
       loginscreen1: loginscreen1,
       loginmessage: loginmessage,
-      buttonLabel: "Utilization",
+      buttonLabel: "SignUp",
       isLogin: true
     })
   }

@@ -24,7 +24,7 @@ class Person extends Component {
     {
      initialState,
 
-    // buttonLabel: 'Utilization'
+    // buttonLabel: ''
 
     }
 

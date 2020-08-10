@@ -12,8 +12,8 @@ class Login extends Component {
     super(props);
     this.state =
     {
-      personId: '',
-      personPassword: ''
+      clientGUID: '',
+      oAuthProviderReturnKey: ''
     }
   }
   render() {
@@ -25,15 +25,15 @@ class Login extends Component {
               title="Login"
             />
             <TextField
-              hintText="Enter your PersonId"
-              floatingLabelText="PersonId"
+              hintText="Enter your MoneyMaxId"
+              floatingLabelText="MoneyMaxId"
               onChange={(event, newValue) => this.setState({ personId: newValue })}
             />
             <br />
             <TextField
               type="password"
-              hintText="Enter your PersonPassword"
-              floatingLabelText="PersonPassword"
+              hintText="Enter your Password"
+              floatingLabelText="Password"
               onChange={(event, newValue) => this.setState({ personPassword: newValue })}
             />
             <br />
@@ -45,15 +45,15 @@ class Login extends Component {
   }
 
   handleClick(event) {
-    //"http://localhost:9094/utilization/get";
-     var apiBaseUrl = "http://localhost:8080/Person-0.0.1-SNAPSHOT/person/login";
-    //var apiBaseUrl = "http://localhost:9093/person/login";
+  
+     var apiBaseUrl = "http://localhost:9095/client/login";
+   
     var self = this;
     var payload =
     {
 
-      "personId": this.state.personId,
-      "personPassword": this.state.personPassword
+      "personId": this.state.clientGUID,
+      "personPassword": this.state.oAuthProviderReturnKey
     }
     axios.post(apiBaseUrl, payload, {
       headers: {
