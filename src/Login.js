@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import React, { Component } from 'react';
 import UploadScreen from './UploadScreen';
 import axios from 'axios';
-import Person from './Person';
+
 // charan
 class Login extends Component {
   constructor(props) {
@@ -80,8 +80,8 @@ class Login extends Component {
 
             console.log(response.data.message);
             var uploadScreen = [];
-            //  uploadScreen.push(<UploadScreen appContext={self.props.appContext} />)
-            uploadScreen.push(<Person appContext={self.props.appContext} />)
+              uploadScreen.push(<UploadScreen appContext={self.props.appContext} />)
+           // uploadScreen.push(<Person appContext={self.props.appContext} />)
 
             self.props.appContext.setState({ loginPage: [], uploadScreen: uploadScreen })
           }
@@ -89,11 +89,11 @@ class Login extends Component {
         else
 
           if (response.status == 500) {
-            console.log("PersonId password do not match");
+            //console.log("PersonId password do not match");
             // alert("username password do not match")
           }
           else {
-            console.log("Username does not exists");
+            //console.log("Username does not exists");
             //alert("Username does not exist");
           }
       })

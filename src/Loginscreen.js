@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Login from './Login';
-import Person from './Person';
 import Register from './Register';
-import Utilization from './Utilization';
+
 
 class Loginscreen extends Component {
   constructor(props) {
@@ -51,19 +50,19 @@ class Loginscreen extends Component {
   if (this.state.isLogin) {
     var loginscreen = [];
     loginscreen.push(<Register parentContext={this} />);
-    loginmessage = "Go Back to Person Details";
+    loginmessage = "";
     this.setState({
       loginscreen: loginscreen,
       loginmessage: loginmessage,
-      buttonLabel: "Person",
+      buttonLabel: "",
       isLogin: false
     })
   }
   else {
     var loginscreen1 = [];
-    // loginscreen1.push(<Login parentContext={this} />);
-    loginscreen1.push(<Person parentContext={this} />);
-    loginmessage = "Utilization Details";
+    loginscreen1.push(<Login parentContext={this} />);
+   // loginscreen1.push(<Person parentContext={this} />);
+    //loginmessage = "";
     this.setState({
       loginscreen1: loginscreen1,
       loginmessage: loginmessage,
